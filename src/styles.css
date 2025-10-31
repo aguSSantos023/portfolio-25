@@ -1,2 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+
+/* Import Fonts */
+@font-face {
+  font-family: Modak-Regular;
+  src: url('./app/assets/fonts/Modak-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: WinkySans-VariableFont;
+  src: url('./app/assets/fonts/WinkySans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* Tailwind */
+@theme {
+
+  /*COLORS*/
+  --color-background-c: #0f1115;
+  --color-second-c: #1a1d23;
+  --color-text-c: #e5e7eb;
+  --color-primary-c: #ff6d2d;
+
+  /*FONT*/
+  --font-modak-f: "Modak-Regular", sans-serif;
+  --font-winky-f: "WinkySans-VariableFont", sans-serif;
+
+}
+
+
+
+body{
+  background-color: #0f1115;
+}

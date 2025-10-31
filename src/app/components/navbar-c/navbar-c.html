@@ -1,0 +1,18 @@
+<div
+  class="w-[340px] md:w-[500px] bg-second-c p-4 rounded-md"
+  >
+  <nav
+    class="flex justify-between md:justify-around items-center
+    md:text-lg text-text-c font-winky-f"
+    >
+    @for (route of routes(); track route.code) {
+      <a
+      [href]="`#${route.code}`"
+      class="hover:scale-90 duration-100 ease-in">
+        {{ route.name }}
+      </a>
+    }
+
+  </nav>
+
+</div>
