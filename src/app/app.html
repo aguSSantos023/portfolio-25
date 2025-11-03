@@ -1,8 +1,8 @@
 <div class="min-h-screen mx-[5%] md:mx-[25%] bg-background-c flex flex-col items-center">
   <app-navbar-c class="fixed mt-2.5"/>
 
-  <main class="mt-28 w-full">
-    <section>
+  <main class="mt-24 w-full">
+    <section class="flex flex-col justify-center items-center gap-8">
       <app-download-cv-c />
 
       <header class="text-center text-text-c">
@@ -17,6 +17,26 @@
       <div class="flex justify-center items-center gap-5">
         <app-external-link-c type="linkedin" />
         <app-external-link-c type="github" />
+      </div>
+
+      <div class="flex justify-center items-center gap-2">
+
+        @for (svg of preferredStack(); track svg.name) {
+
+          <a
+            [href]="svg.link"
+            target="_blank"
+            class="transition duration-200 hover:-translate-y-1"
+            >
+            <app-svg-icon-c
+              [iconName]="svg.name"
+              [size]="28"
+            />
+
+          </a>
+
+
+        }
 
       </div>
 

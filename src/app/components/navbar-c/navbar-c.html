@@ -1,14 +1,16 @@
 <div
-  class="w-[340px] md:w-[500px] bg-second-c p-4 rounded-md"
+  class="w-[340px] md:w-[300px] bg-second-c p-4 md:py-2 rounded-md
+  text-sm md:text-sm"
   >
   <nav
     class="flex justify-between md:justify-around items-center
     md:text-lg text-text-c font-winky-f"
     >
+
     @for (route of routes(); track route.code) {
       <a
       [href]="`#${route.code}`"
-      class="hover:scale-90 duration-100 ease-in">
+      class="w-20 text-center hover:scale-90 duration-100 ease-in">
         {{ route.name }}
       </a>
     }

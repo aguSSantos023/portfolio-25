@@ -13,11 +13,12 @@
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          class="absolute fill-background-c z-10 transition-colors duration-400 group-hover:fill-primary-c"
           [style.left.px]="svg.x"
           [style.top.px]="svg.y"
           [style.transform]="'translate(-50%, -50%) rotate(' + svg.rotation + 'deg)'"
           viewBox="0 0 24 24"
+          class="absolute fill-background-c z-10 transition-colors duration-400
+          group-hover:fill-primary-c group-active:fill-primary-c"
           >
 
           <path
@@ -34,12 +35,13 @@
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          class="absolute fill-background-c z-10 transition duration-400 group-hover:fill-primary-c"
           [style.left.px]="svg.x"
           [style.top.px]="svg.y"
           [style.transform]="'translate(-50%, -50%) rotate(' + svg.rotation + 'deg)'"
           viewBox="0 0 24 24"
           viewBox="0 0 24 24"
+          class="absolute fill-background-c z-10 transition duration-400
+          group-hover:fill-primary-c group-active:fill-primary-c"
           >
 
           <path
@@ -54,8 +56,8 @@
   </div>
 
   <span
-    class="z-20 font-winky-f font-bold text-text-c
-    transition duration-400 ease-in-out group-hover:scale-125"
+    class="z-20 font-winky-f font-extrabold text-text-c
+    transition duration-400 ease-in-out group-hover:scale-125 group-active:scale-125"
     >
     {{ type() | uppercase }}
   </span>

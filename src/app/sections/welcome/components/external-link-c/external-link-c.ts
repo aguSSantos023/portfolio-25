@@ -3,8 +3,6 @@ import { Component, input, OnInit, signal } from '@angular/core';
 import { SvgElement } from './svg-element-interface';
 
 
-
-
 type ExternalLinkType = 'linkedin' | 'github'
 
 
