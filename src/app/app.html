@@ -1,17 +1,17 @@
 <div class="min-h-screen mx-[5%] md:mx-[25%] bg-background-c flex flex-col items-center">
-  <app-navbar-c class="fixed mt-2.5"/>
+  <app-navbar-c class="mt-2.5"/>
 
   <main class="mt-24 w-full">
-    <section class="flex flex-col justify-center items-center gap-8">
+    <section class="flex flex-col justify-center items-center gap-8 md:mt-8">
       <app-download-cv-c />
 
       <header class="text-center text-text-c">
         <div class="font-modak-f">
-          <h2 class="text-3xl text-primary-c leading-none">Software Developer</h2>
-          <h1 class="text-[2.6rem] -mt-4">Agustín Santos</h1>
+          <h2 class="text-3xl md:text-5xl text-primary-c leading-none">Software Developer</h2>
+          <h1 class="text-[2.6rem] md:text-7xl -mt-4">Agustín Santos</h1>
         </div>
 
-        <h3 class="text-xl font-winky-f font-bold">Full Stack Angular & Express.js</h3>
+        <h3 class="text-xl md:text-3xl md:mt-3 font-winky-f font-bold">Full Stack Angular & Express.js</h3>
       </header>
 
       <div class="flex justify-center items-center gap-5">
@@ -30,7 +30,7 @@
             >
             <app-svg-icon-c
               [iconName]="svg.name"
-              [size]="28"
+              [size]="28 * iconSizeMultiplier()"
             />
 
           </a>
@@ -40,6 +40,17 @@
 
       </div>
 
+      <div class="relative">
+        <app-animated-arrow-down-c class="absolute left-1/2 -translate-x-1/2" [distance]="300" [duration]="3" />
+
+      </div>
+
+    </section>
+
+
+
+    <section class="mt-72 h-96" id="experience">
+      <h3 class="text-text-c text-center">EXPERIENCIA</h3>
     </section>
 
   </main>

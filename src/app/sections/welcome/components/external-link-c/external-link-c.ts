@@ -1,5 +1,5 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, input, OnDestroy, OnInit, signal } from '@angular/core';
 import { SvgElement } from './svg-element-interface';
 
 
@@ -12,21 +12,26 @@ type ExternalLinkType = 'linkedin' | 'github'
   templateUrl: './external-link-c.html',
   styleUrl: './external-link-c.css',
 })
-export class ExternalLinkC implements OnInit {
+export class ExternalLinkC implements OnInit, OnDestroy {
   type = input.required<ExternalLinkType>()
 
   private readonly SVG_SIZE: number = 24;
-  private readonly MIN_DISTANCE: number = this.SVG_SIZE * 0.6;  // Minimum distance for 55% overlap
-  private readonly BUTTON_WIDTH: number = 150;
-  private readonly BUTTON_HEIGHT: number = 40;
+  private readonly MIN_DISTANCE: number = this.SVG_SIZE * 0.6;
+
+
+  private buttonWidth = signal<number>(160);
+  private buttonHeight = signal<number>(40);
+
 
   svgs = signal<SvgElement[]>([]);
 
 
 
   ngOnInit(): void {
-
+    this.updateButtonDimensions();
     this.generateSvgs()
+
+    window.addEventListener('resize', () => this.handleResize());
 
   }
 
@@ -67,8 +72,8 @@ export class ExternalLinkC implements OnInit {
     let svgCount = 0;
 
     // Valid range of positions (from the edge of the SVG to the end of the button minus the edge)
-    const maxX = this.BUTTON_WIDTH;
-    const maxY = this.BUTTON_HEIGHT;
+    const maxX = this.buttonWidth();
+    const maxY = this.buttonHeight();
 
     // As long as there are attempts
     while (attempts < maxAttempts) {
@@ -99,4 +104,39 @@ export class ExternalLinkC implements OnInit {
       }
     }
   }
+
+
+
+
+
+  private updateButtonDimensions(): void {
+    const isMdOrLarger = window.innerWidth >= 768; // md breakpoint of Tailwind
+
+    if (isMdOrLarger) {
+      this.buttonWidth.update( value => value = 208)
+      this.buttonHeight.update( value => value = 64)
+
+    } else {
+      this.buttonWidth.update( value => value = 160)
+      this.buttonHeight.update( value => value = 40)
+
+    }
+
+  }
+
+
+
+  private handleResize(): void {
+    this.updateButtonDimensions();
+    this.svgs.set([]); // Clean existing SVGs
+    this.generateSvgs(); // Regenerate with new dimensions
+  }
+
+
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', () => this.handleResize());
+
+  }
+
 }

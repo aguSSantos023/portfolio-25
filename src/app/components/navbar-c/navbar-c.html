@@ -1,6 +1,8 @@
 <div
-  class="w-[340px] md:w-[300px] bg-second-c p-4 md:py-2 rounded-md
-  text-sm md:text-sm"
+  class="w-[340px] md:w-[400px] bg-second-c p-4  rounded-md
+  text-sm md:text-md z-50 fixed -translate-x-1/2
+  transition-all duration-300 ease-in-out"
+  [class.nav-scrolled-effect]="scrolled()"
   >
   <nav
     class="flex justify-between md:justify-around items-center

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { Routes } from './routes-interface';
 
 @Component({
@@ -23,5 +23,18 @@ export class NavbarC {
       name: 'SOBRE MÍ'
     },
   ])
+
+  scrolled = signal<boolean>(false)
+
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+
+    if (window.scrollY > 0) {
+      this.scrolled.set(true)
+    } else {
+      this.scrolled.set(false);
+    }
+  }
 
 }
