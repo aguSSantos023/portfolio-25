@@ -1,0 +1,44 @@
+<div class="arrows-wrapper">
+  <div class="arrows-container">
+    @for (arrow of arrows(); track $index) {
+      <div
+        class="arrow-item"
+        [style.--arrow-delay]="arrow.delay + 's'"
+        [style.--arrow-rotation]="arrow.rotation + 'deg'"
+
+        [style.top]="arrow.top"
+        [style.left]="arrow.left"
+        [style.right]="arrow.right"
+        [style.bottom]="arrow.bottom"
+        [style.transform]="arrow.transform">
+
+        <svg
+          class="arrow-svg"
+          viewBox="0 0 100 200"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="15" stroke-linecap="round"
+          xmlns="http://www.w3.org/2000/svg">
+          <g class="shaft">
+            <line x1="50" y1="20" x2="50" y2="120" />
+          </g>
+          <g class="shaft-animated">
+            <line x1="50" y1="120" x2="50" y2="145" />
+          </g>
+          <g class="tip-animated">
+            <polygon
+              points="35,145 65,145 50,165"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="8"
+              stroke-linejoin="round" />
+          </g>
+        </svg>
+      </div>
+    }
+  </div>
+
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>

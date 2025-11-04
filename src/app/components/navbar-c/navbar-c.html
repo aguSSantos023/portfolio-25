@@ -1,5 +1,5 @@
 <div
-  class="w-[340px] md:w-[400px] bg-second-c p-4  rounded-md
+  class="w-[340px] md:w-[500px] bg-second-c p-4  rounded-md
   text-sm md:text-md z-50 fixed -translate-x-1/2
   transition-all duration-300 ease-in-out"
   [class.nav-scrolled-effect]="scrolled()"
@@ -10,11 +10,15 @@
     >
 
     @for (route of routes(); track route.code) {
-      <a
-      [href]="`#${route.code}`"
-      class="w-20 text-center hover:scale-90 duration-100 ease-in">
-        {{ route.name }}
-      </a>
+      <app-hover-arrow-wrapper-link-c class="w-20">
+        <a
+          [href]="`#${route.code}`"
+          class="text-center"
+          >
+          {{ route.name }}
+        </a>
+      </app-hover-arrow-wrapper-link-c>
+
     }
 
   </nav>

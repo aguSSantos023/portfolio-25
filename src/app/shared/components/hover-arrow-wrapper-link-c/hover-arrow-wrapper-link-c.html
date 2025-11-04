@@ -1,0 +1,36 @@
+<div
+  class="hover-container"
+  [style]="styles"
+>
+  <div class="content-slot">
+    <ng-content></ng-content>
+  </div>
+
+  <svg
+    class="arrow-absolute"
+    viewBox="0 100 100 200"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="15"
+    stroke-linecap="round"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g class="shaft-fixed text-primary-c">
+      <line x1="50" y1="20" x2="50" y2="120" />
+    </g>
+
+    <g #shaft class="shaft-animated text-primary-c">
+      <line x1="50" y1="120" x2="50" y2="145" />
+    </g>
+
+    <g #tip class="tip-animated text-primary-c">
+      <polygon
+        points="35,145 65,145 50,165"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="8"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+</div>

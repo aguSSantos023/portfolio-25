@@ -1,21 +1,20 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-animated-arrow-down-c',
-  imports: [],
-  templateUrl: './animated-arrow-down-c.html',
-  styleUrl: './animated-arrow-down-c.css',
+  selector: 'app-hover-arrow-wrapper-link-c',
+  standalone: true,
+  templateUrl: './hover-arrow-wrapper-link-c.html',
+  styleUrls: ['./hover-arrow-wrapper-link-c.css'],
 })
-export class AnimatedArrowDownC {
-
-  distance = input<number>(60);
+export class HoverArrowWrapperLinkC {
+  distance = input<number>(120);
   duration = input<number>(1.5);
   delay = input<number>(0);
 
 
   get styles() {
     const shaftOriginalLength = 30;
-    const stretchFactor = 1 + (this.distance() / shaftOriginalLength);
+    const stretchFactor = 1 + this.distance() / shaftOriginalLength;
 
     return {
       '--arrow-distance': `${this.distance()}px`,
@@ -24,4 +23,7 @@ export class AnimatedArrowDownC {
       '--arrow-stretch': stretchFactor.toString(),
     };
   }
+
+
+
 }
