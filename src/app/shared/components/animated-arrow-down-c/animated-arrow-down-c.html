@@ -13,11 +13,11 @@
     <line x1="50" y1="20" x2="50" y2="120" />
   </g>
 
-  <g class="shaft-animated">
+  <g class="shaft-animated" [class.is-animating]="isAnimated()">
     <line x1="50" y1="120" x2="50" y2="145" />
   </g>
 
-  <g class="tip-animated">
+  <g class="tip-animated" [class.is-animating]="isAnimated()">
     <polygon
       points="35,145 65,145 50,165"
       fill="currentColor"

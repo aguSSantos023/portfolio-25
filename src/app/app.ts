@@ -5,11 +5,13 @@ import { ExternalLinkC } from "./sections/welcome/components/external-link-c/ext
 import { SvgIconC } from "./shared/components/svg-icon-c/svg-icon-c";
 import { IconLink } from './shared/interface/icons';
 import { AnimatedArrowDownC } from "./shared/components/animated-arrow-down-c/animated-arrow-down-c";
+import { CardExperienceCompany } from "./sections/experience/card-experience-company/card-experience-company";
+import { CardExperince } from './sections/experience/card-experience-company/card-experience-company-interface';
 
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarC, DownloadCvC, ExternalLinkC, SvgIconC, AnimatedArrowDownC],
+  imports: [NavbarC, DownloadCvC, ExternalLinkC, SvgIconC, AnimatedArrowDownC, CardExperienceCompany],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -47,6 +49,35 @@ export class App implements OnInit {
   ])
 
   iconSizeMultiplier = signal<number>(1)
+
+  experienceCompanyData = signal<CardExperince[]>([
+    {
+      title: 'Desarrollador Full Stack + Nytelweb',
+      dates: 'Mar 2025 - Jul 2025',
+      data: [
+        'Habilidades validadas en el stack (-{Laravel 12}-, -{Angular 19}-, -{MySQL}-) mediante proyectos iniciales para superar la evaluación técnica-{.}-',
+        'Implementación de nuevas funcionalidades en productos existentes, trabajando en -{backend}- (PHP/Laravel) y -{frontend}- (Angular)-{.}-',
+        'Desarrollo de componentes de interfaz con Angular, Tailwind CSS y PrimeNG-{.}-',
+        'Liderazgo de un -{proyecto estratégico completo}-, gestionando desde la concepción hasta la implementación final-{.}-',
+        'Gestión de -{requisitos del cliente}- para asegurar una implementación exitosa y alineada con objetivos-{.}-',
+        'Colaboración con el equipo usando -{ClickUp}- (planificación) y -{Git}- (control de versiones y Code Reviews)-{.}-'
+      ],
+      stack: [
+        'html',
+        'css',
+        'angular',
+        'tailwind',
+        'primeng',
+        'php',
+        'laravel',
+        'mysql',
+        'git',
+        'github',
+        'clickup',
+        'xampp'
+      ]
+    },
+  ])
 
   ngOnInit(): void {
     this.updateIconsDimensions()

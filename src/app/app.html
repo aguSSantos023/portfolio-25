@@ -49,8 +49,23 @@
 
 
 
-    <section class="mt-72 h-screen" id="experience">
-      <h3 class="text-text-c text-center">EXPERIENCIA</h3>
+    <section
+      class="mt-48 pt-20 h-screen text-text-c"
+      id="experience"
+      >
+      <h3 class="text-xl text-center font-modak-f mb-5 tracking-[0.2rem]">EXPERIENCIA</h3>
+
+      <article>
+        <h4 class="text-2xl text-center font-winky-f tracking-widest mb-2">EMPRESAS</h4>
+        @for (card of experienceCompanyData(); track card.title) {
+          <app-card-experience-company [companyData]="card"  />
+        }
+      </article>
+
+      <article>
+        <h4 class="text-xl text-center font-winky-f tracking-widest">PROYECTOS DESTACADOS</h4>
+      </article>
+
     </section>
 
   </main>

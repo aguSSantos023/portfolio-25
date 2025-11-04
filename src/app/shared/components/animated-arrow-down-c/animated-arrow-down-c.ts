@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { ScreenSizeS } from '../../services/screen-size-s';
 
 @Component({
   selector: 'app-animated-arrow-down-c',
@@ -11,6 +12,28 @@ export class AnimatedArrowDownC {
   distance = input<number>(60);
   duration = input<number>(1.5);
   delay = input<number>(0);
+  isAnimated = signal<boolean>(true);
+
+  screenSizeS = inject(ScreenSizeS)
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+
+    if (this.screenSizeS.isMobile()) {
+      if (window.scrollY > 625) {
+        this.isAnimated.set(false)
+      } else {
+        this.isAnimated.set(true);
+      }
+    } else {
+      if (window.scrollY > 875) {
+        this.isAnimated.set(false)
+      } else {
+        this.isAnimated.set(true);
+      }
+    }
+
+  }
 
 
   get styles() {
