@@ -42,7 +42,11 @@
 
       <div class="relative" >
 
-        <app-animated-arrow-down-c class="absolute left-1/2 -translate-x-1/2" [distance]="290" [duration]="3" />
+        <app-animated-arrow-down-c
+          class="absolute left-1/2 -translate-x-1/2 z-0"
+          [distance]="280"
+          [duration]="3"
+        />
       </div>
 
     </section>
@@ -50,21 +54,49 @@
 
 
     <section
-      class="mt-48 pt-20 h-screen text-text-c"
+      class="mt-48 pt-20 text-text-c"
       id="experience"
       >
-      <h3 class="text-xl text-center font-modak-f mb-5 tracking-[0.2rem]">EXPERIENCIA</h3>
+      <h3
+        class="text-xl text-center font-modak-f
+        mb-5 tracking-[0.2rem]"
+        >
+        EXPERIENCIA
+      </h3>
 
       <article>
         <h4 class="text-2xl text-center font-winky-f tracking-widest mb-2">EMPRESAS</h4>
-        @for (card of experienceCompanyData(); track card.title) {
-          <app-card-experience-company [companyData]="card"  />
-        }
-      </article>
+        <div class="flex flex-col justify-center items-center gap-4">
+          @for (card of experienceCompanyData(); track card.title) {
+            <app-card-experience-company
+              [companyData]="card"
+              class="w-full"
+            />
+          }
+        </div>
 
+      </article>
+<!--
       <article>
         <h4 class="text-xl text-center font-winky-f tracking-widest">PROYECTOS DESTACADOS</h4>
-      </article>
+      </article> -->
+
+    </section>
+
+
+    <section class="h-screen pt-10 text-white">
+
+      <h3>
+        <app-title-arrows-wrapper-c class="text-xl text-center font-modak-f tracking-[0.2rem]">
+          TECNOLOGÍAS
+        </app-title-arrows-wrapper-c>
+      </h3>
+
+      <h3 class="mt-40">
+        <app-title-arrows-wrapper-c [arrowCount]="3" class="text-xl text-center font-modak-f tracking-[0.2rem]">
+          SOBRE MI
+        </app-title-arrows-wrapper-c>
+      </h3>
 
     </section>
 

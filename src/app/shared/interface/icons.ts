@@ -12,7 +12,12 @@ export type IconName =
 'primeng' |
 'github'  |
 'git'     |
-'xampp'
+'xampp'   |
+'memory'  |
+'wrench'  |
+'cpu'     |
+'laptop'  |
+'gears'
 
 
 export interface IconLink {

@@ -16,6 +16,4 @@ export class SvgIconC {
   iconName = input.required<IconName>()
   size = input<number>(24)
 
-
-
 }

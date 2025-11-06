@@ -13,8 +13,8 @@
   position: absolute;
   z-index: 1;
   left: 50%;
-  top: -10px;
-  transform: translateX(-43%);
+  top: -5px;
+  transform: translateX(-47%);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
@@ -39,7 +39,7 @@
 }
 
 .shaft-animated {
-  transform-origin: 50% 59%;
+  transform-origin: 50% 30%;
 }
 
 .hover-container:hover .shaft-animated {

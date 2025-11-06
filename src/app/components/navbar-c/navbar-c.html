@@ -5,12 +5,12 @@
   [class.nav-scrolled-effect]="scrolled()"
   >
   <nav
-    class="flex justify-around md:justify-around items-center
+    class="flex justify-around items-center
     md:text-lg text-text-c font-winky-f"
     >
 
     @for (route of routes(); track route.code) {
-      <app-hover-arrow-wrapper-link-c class="w-20">
+      <app-hover-arrow-wrapper-link-c class="w-20 md:w-30 text-center">
         <a
           [href]="`#${route.code}`"
           class="text-center"
