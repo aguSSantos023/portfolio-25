@@ -1,23 +1,26 @@
 export type IconName =
-'html'    |
-'css'     |
-'tailwind'|
-'angular' |
-'node'    |
-'express' |
-'mysql'   |
-'laravel' |
-'php'     |
-'clickup' |
-'primeng' |
-'github'  |
-'git'     |
-'xampp'   |
-'memory'  |
-'wrench'  |
-'cpu'     |
-'laptop'  |
-'gears'
+'html'      |   'codeigniter'   |
+'css'       |   'mongodb'       |
+'js'        |   'vscode'        |
+'ts'        |   'postman'       |
+'tailwind'  |   'docker'        |
+'angular'   |   'jest'          |
+'node'      |   'jwt'           |
+'express'   |   'penpot'        |
+'mysql'     |   'virtualbox'    |
+'laravel'   |   'debian'        |
+'php'       |   'json'          |
+'clickup'   |   'laragon'       |
+'primeng'   |   'sequelize'     |
+'github'    |   'ionic'         |
+'git'       |   'trello'        |
+'xampp'     |   'linux'         |
+'memory'    |   'electron'      |
+'udemy'     |
+'cpu'       |
+'gears'     |
+'jquery'    |
+'bootstrap'
 
 
 export interface IconLink {

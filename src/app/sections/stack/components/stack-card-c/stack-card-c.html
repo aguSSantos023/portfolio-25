@@ -1,0 +1,19 @@
+
+<div
+  class="bg-second-c p-3 rounded-md h-full
+    flex flex-col justify-start items-center gap-5"
+  >
+
+  <h4
+    class="text-text-c font-winky-f"
+    >
+    {{ dataCard().title| titlecase }}
+  </h4>
+
+  <div class="grid grid-cols-3 gap-3">
+    @for (icon of dataCard().nameIcons; track icon) {
+      <app-svg-icon-c [iconName]="icon"  />
+    }
+  </div>
+</div>
+

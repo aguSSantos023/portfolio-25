@@ -1,16 +1,17 @@
 import { Component, inject, input } from '@angular/core';
 import { CardExperince } from './card-experience-company-interface';
-import { SvgIconC } from "../../../shared/components/svg-icon-c/svg-icon-c";
-import { ScreenSizeS } from '../../../shared/services/screen-size-s';
-import { HighlightPipe } from '../../../shared/pipes/highlight-pipe';
+import { SvgIconC } from '../../../../shared/components/svg-icon-c/svg-icon-c';
+import { HighlightPipe } from '../../../../shared/pipes/highlight-pipe';
+import { ScreenSizeS } from '../../../../shared/services/screen-size-s';
+
 
 @Component({
-  selector: 'app-card-experience-company',
+  selector: 'app-card-experience-company-c',
   imports: [SvgIconC, HighlightPipe],
-  templateUrl: './card-experience-company.html',
-  styleUrl: './card-experience-company.css',
+  templateUrl: './card-experience-company-c.html',
+  styleUrl: './card-experience-company-c.css',
 })
-export class CardExperienceCompany {
+export class CardExperienceCompanyC {
 
   companyData = input.required<CardExperince>()
 

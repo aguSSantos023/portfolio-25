@@ -1,4 +1,4 @@
-import { IconName } from "../../../shared/interface/icons";
+import { IconName } from "../../../../shared/interface/icons";
 
 export interface CardExperince {
   title: string;

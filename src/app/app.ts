@@ -1,22 +1,37 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { NavbarC } from "./components/navbar-c/navbar-c";
 import { DownloadCvC } from "./shared/components/download-cv-c/download-cv-c";
 import { ExternalLinkC } from "./sections/welcome/components/external-link-c/external-link-c";
 import { SvgIconC } from "./shared/components/svg-icon-c/svg-icon-c";
 import { IconLink } from './shared/interface/icons';
 import { AnimatedArrowDownC } from "./shared/components/animated-arrow-down-c/animated-arrow-down-c";
-import { CardExperienceCompany } from "./sections/experience/card-experience-company/card-experience-company";
-import { CardExperince } from './sections/experience/card-experience-company/card-experience-company-interface';
+
 import { TitleArrowsWrapperC } from "./shared/components/title-arrows-wrapper-c/title-arrows-wrapper-c";
+import { ScreenSizeS } from './shared/services/screen-size-s';
+import { CardExperienceCompanyC } from './sections/experience/components/card-experience-company-c/card-experience-company-c';
+import { CardExperince } from './sections/experience/components/card-experience-company-c/card-experience-company-interface';
+import { StackCardC } from "./sections/stack/components/stack-card-c/stack-card-c";
+import { StackCard } from './sections/stack/components/stack-card-c/stack-card-interface';
 
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarC, DownloadCvC, ExternalLinkC, SvgIconC, AnimatedArrowDownC, CardExperienceCompany, TitleArrowsWrapperC],
+  imports: [
+    NavbarC,
+    DownloadCvC,
+    ExternalLinkC,
+    SvgIconC,
+    AnimatedArrowDownC,
+    CardExperienceCompanyC,
+    TitleArrowsWrapperC,
+    StackCardC],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App {
+
+
+  private screenSizeS = inject(ScreenSizeS);
 
   preferredStack = signal<IconLink[]>([
     {
@@ -49,7 +64,6 @@ export class App implements OnInit {
     }
   ])
 
-  iconSizeMultiplier = signal<number>(1)
 
   experienceCompanyData = signal<CardExperince[]>([
     {
@@ -88,42 +102,87 @@ export class App implements OnInit {
         'Realización de -{mantenimientos preventivos}- en equipos para minimizar averías y asegurar un rendimiento óptimo a largo plazo -{.}-'
       ],
       stack: [
-        'laptop',
-        'wrench',
+
         'cpu',
         'gears',
-        'memory'
+        'memory',
+        'virtualbox',
+        'debian',
+        'linux'
       ]
     }
   ])
 
-  ngOnInit(): void {
-    this.updateIconsDimensions()
-    window.addEventListener('resize', () => this.handleResize());
-  }
 
+  stackData = signal<StackCard[]>([
+    {
+      title: 'frontend',
+      nameIcons: [
+        'html',
+        'css',
+        'js',
+        'ts',
+        'angular',
+        'tailwind',
+        'primeng',
+        'jquery',
+        'bootstrap',
+        'ionic',
+      ]
+    },
+    {
+      title: 'backend',
+      nameIcons: [
+        'node',
+        'express',
+        'mysql',
+        'php',
+        'laravel',
+        'codeigniter',
+        'jwt',
+        'json'
 
-  private updateIconsDimensions(): void {
-    const isMdOrLarger = window.innerWidth >= 768; // md breakpoint of Tailwind
-
-    if (isMdOrLarger) {
-
-      this.iconSizeMultiplier.update(value => value = 1.4)
-
-    } else {
-
-      this.iconSizeMultiplier.update(value => value = 1)
-
+      ]
+    },
+    {
+      title: 'aprendiendo',
+      nameIcons: [
+        'docker',
+        'jest',
+        'mongodb',
+        'electron'
+      ]
+    },
+    {
+      title: 'herramWientas',
+      nameIcons: [
+        'vscode',
+        'git',
+        'github',
+        'xampp',
+        'laragon',
+        'postman',
+        'clickup',
+        'trello',
+        'penpot',
+      ]
     }
-
-  }
-
+  ])
 
 
-  private handleResize(): void {
-    this.updateIconsDimensions();
 
-  }
+
+  iconSizeMultiplier = computed(() => {
+    const isMobile = this.screenSizeS.isMobile();
+
+    return !isMobile ? 1.4 : 1
+
+  });
+
+
+
+
+
 
 
 }

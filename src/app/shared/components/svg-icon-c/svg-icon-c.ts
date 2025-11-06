@@ -3,9 +3,6 @@ import { IconName } from '../../interface/icons';
 
 
 
-
-
-
 @Component({
   selector: 'app-svg-icon-c',
   imports: [],
