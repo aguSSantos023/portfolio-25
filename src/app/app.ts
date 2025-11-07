@@ -13,6 +13,8 @@ import { CardExperince } from './sections/experience/components/card-experience-
 import { StackCardC } from "./sections/stack/components/stack-card-c/stack-card-c";
 import { StackCard } from './sections/stack/components/stack-card-c/stack-card-interface';
 import { HighlightPipe } from './shared/pipes/highlight-pipe';
+import { CardStudy } from './sections/about-me/card-study-c/card-study-interface';
+import { CardStudyC } from './sections/about-me/card-study-c/card-study-c';
 
 
 @Component({
@@ -26,7 +28,8 @@ import { HighlightPipe } from './shared/pipes/highlight-pipe';
     CardExperienceCompanyC,
     TitleArrowsWrapperC,
     StackCardC,
-    HighlightPipe
+    HighlightPipe,
+    CardStudyC
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -192,7 +195,7 @@ export class App {
       del código-{.}-`
     ],
     [
-      `Cuento con dominio de bases de datos -{MySQL}-, y
+      `Cuento con dominio de bases de datos -{MySQL}- y
       experiencia con frameworks como -{Tailwind CSS}-,
       -{Ionic}- y librerías de componentes como -{PrimeNG}-.
       Pongo un gran énfasis en el detalle, buscando
@@ -205,9 +208,59 @@ export class App {
       contribuir a la creación de soluciones -{robustas}-
       y -{eficientes}-, aprovechando mi versatilidad
       Full Stack. Busco un entorno -{colaborativo}- y
-      -{desafiante}- que me impulse a evolucionar y
+      -{desafiante}- que me impulse a evolucionar
       adoptar nuevas prácticas de la industria-{.}-`
     ]
+  ])
+
+
+  studiesData = signal<CardStudy[]>([
+    {
+      title: 'Desarrollador De Aplicaciones Web',
+      level: 'Grado Superior',
+      date: '2023 - 2025',
+      text: [
+        `Realicé el Grado Superior en Desarrollo de Aplicaciones Web (-{DAW}-) en el I.E.S.
+        -{Albor Croft}- de Jerez de la Frontera (-{Cádiz}-), cubriendo el periodo de 2023 a 2025.
+        Esta formación me ha permitido adquirir un perfil de desarrollador
+        -{Full Stack}- con un fuerte enfoque en la aplicación práctica de tecnologías actuales -{.}-`,
+
+        `El programa de estudios se centró en módulos clave, proporcionándome un dominio en
+        el desarrollo de aplicaciones web dinámicas y modernas. En la parte -{Front-End}-,
+        adquirí experiencia avanzada con -{Angular 19}-, complementada con habilidades sólidas
+        en HTML, CSS, JavaScript y la implementación de frameworks de diseño como -{Tailwind}-
+        y -{Bootstrap}-. Para el -{Back-End}-, trabajé extensivamente con -{PHP}-, utilizando los
+        frameworks de desarrollo -{Laravel}- y -{CodeIgniter}-, con manejo experto de -{MySQL}- para
+        la gestión y consulta de bases de datos -{.}-`,
+
+        `Mi logro más destacado fue el Trabajo Fin de Grado (-{TFG}-), un proyecto individual
+        de tres meses de duración. En él, integré Angular 19 para la interfaz, PHP con
+        Laravel para el lado del servidor y MySQL para la persistencia de datos. Este
+        trabajo no solo demostró mi capacidad para desarrollar una -{aplicación completa}-
+        y -{robusta}-, sino que fue reconocido por el profesorado con la maxima calificación.
+        A nivel metodológico, apliqué -{SCRUM}- para organizarlas tareas individualmente y utilicé -{Git Flow}-
+        para el control de versiones, asegurando un desarrollo estructurado y eficiente.`
+      ]
+    },
+    {
+      title: 'Técnico En Telecomunicaciones',
+      level: 'Grado Medio',
+      date: '2021 - 2023',
+      text: [
+        `Durante el Grado Medio, desarrollé una sólida base en el -{diagnóstico estructurado}- y
+        la -{resolución de problemas}- complejos, habilidades fundamentales en el desarrollo de
+        software. Los módulos de Sistemas Microinformáticos se enfocaron en la detección y
+        corrección de fallos, aplicando una -{metodología lógica}- para aislar la causa raíz,
+        como la verificación de señales. Esta experiencia culminó en una capacidad demostrada para gestionar
+        un alto volumen de tareas de forma eficaz, lo que evidencia -{eficiencia}- y -{orientación a resultados}- -{.}-`,
+
+        `A nivel de ejecución y planificación, el trabajo en proyectos como las -{instalaciones eléctricas
+        y domóticas}- fue crucial para adquirir competencias en la -{gestión de la estructura}- y la -{coordinación de equipos}-.
+        La elaboración de planos detallados de una instalación residencial, desde el diseño de
+        circuitos hasta la distribución de componentes, requirió una -{planificación}- exhaustiva
+        y el -{seguimiento riguroso}- de especificaciones técnicas.`
+      ]
+    }
   ])
 
 

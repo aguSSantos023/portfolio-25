@@ -128,7 +128,8 @@
           class="mx-2 md:mx-5 text-sm md:text-base font-winky-f
           flex flex-col md:flex-row justify-center items-start gap-5 md:gap-10"
           >
-          @for (colum of aboutMe(); track $index; let i = $index) {
+
+          @for (colum of aboutMeData(); track $index; let i = $index) {
             <div
               class="md:w-2/5 flex flex-col justify-center items-center gap-5"
               [class.text-right]="i % 2 !== 0"
@@ -142,6 +143,22 @@
         </div>
 
       </article>
+
+      <article class="h-screen w-full">
+        <h4 class="text-2xl text-center font-winky-f tracking-widest mb-5">Estudios</h4>
+
+        <div class="flex flex-col gap-3">
+          @for (study of studiesData(); track study.title) {
+            <app-card-study-c
+              [studyData]="study"
+              class=""
+            />
+          }
+        </div>
+
+      </article>
+
+
 
     </section>
 
