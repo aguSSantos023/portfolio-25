@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
 import { SvgIconC } from '../../../../shared/components/svg-icon-c/svg-icon-c';
 import { StackCard } from './stack-card-interface';
@@ -12,6 +12,15 @@ import { StackCard } from './stack-card-interface';
 export class StackCardC {
 
   dataCard = input.required<StackCard>()
+
+  iconFullName = signal<string>('')
+
+
+
+  handleIconNameChange(fullName: string): void {
+    this.iconFullName.set(fullName)
+
+  }
 
 
 

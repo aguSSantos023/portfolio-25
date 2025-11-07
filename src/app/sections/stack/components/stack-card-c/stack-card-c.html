@@ -1,18 +1,26 @@
 
 <div
   class="bg-second-c p-3 rounded-md h-full
-    flex flex-col justify-start items-center gap-5"
+  flex flex-col justify-start items-center gap-5
+  hover:scale-105 duration-300 ease-in"
   >
 
   <h4
-    class="text-text-c font-winky-f"
+    class="text-text-c font-winky-f font-bold"
     >
     {{ dataCard().title| titlecase }}
   </h4>
 
-  <div class="grid grid-cols-3 gap-3">
+  <div class="flex flex-wrap justify-center items-center gap-3">
     @for (icon of dataCard().nameIcons; track icon) {
-      <app-svg-icon-c [iconName]="icon"  />
+
+      <app-svg-icon-c
+        [iconName]="icon"
+        [size]="28"
+        [isViewName]="true"
+        class="flex flex-col justify-center items-center gap-2
+        w-14 h-14 text-center text-xs font-winky-f"
+      />
     }
   </div>
 </div>

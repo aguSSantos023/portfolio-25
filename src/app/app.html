@@ -86,7 +86,7 @@
 
     <section
       id="stack"
-      class="h-screen pt-20 text-white flex flex-col justify-center items-center gap-10"
+      class="pt-20 text-white flex flex-col justify-center items-center gap-10"
       >
 
       <h3>
@@ -100,7 +100,7 @@
         @for (card of stackData(); track card.title) {
           <app-stack-card-c
             [dataCard]="card"
-            />
+          />
         }
 
       </article>

@@ -92,7 +92,7 @@ export class App {
         'xampp'
       ]
     },{
-      title: 'Técnico Informático + Hilfsdienst Viena',
+      title: 'Técnico Informático + Hilfsdienst',
       dates: 'Mar 2023 -Jun 2023',
       data: [
         'Diagnóstico y resolución eficaz de incidencias complejas de -{hardware}- y -{software}- -{.}-',
@@ -154,7 +154,7 @@ export class App {
       ]
     },
     {
-      title: 'herramWientas',
+      title: 'herramientas',
       nameIcons: [
         'vscode',
         'git',

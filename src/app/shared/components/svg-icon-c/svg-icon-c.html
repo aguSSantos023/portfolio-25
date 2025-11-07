@@ -638,3 +638,11 @@
     <div class="text-red-500">Icono no encontrado</div>
   }
 }
+
+
+@if (isViewName()) {
+  <span>
+    {{ iconFullName() }}
+  </span>
+}
+
