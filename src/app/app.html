@@ -90,18 +90,56 @@
       >
 
       <h3>
-        <app-title-arrows-wrapper-c class="text-xl text-center font-modak-f tracking-[0.2rem]">
+        <app-title-arrows-wrapper-c>
           TECNOLOGÍAS
         </app-title-arrows-wrapper-c>
       </h3>
 
-      <article class="w-full grid grid-cols-2 gap-4">
+      <article class="w-full grid grid-cols-2 gap-4 md:gap-10">
 
         @for (card of stackData(); track card.title) {
           <app-stack-card-c
             [dataCard]="card"
+            class="md:mx-5"
           />
         }
+
+      </article>
+
+    </section>
+
+    <section
+      id="aboutMy"
+      class="pt-20 text-white flex flex-col justify-center items-center gap-10"
+      >
+
+      <h3>
+        <app-title-arrows-wrapper-c
+          [arrowCount]="3"
+          >
+          SOBRE MI
+        </app-title-arrows-wrapper-c>
+      </h3>
+
+      <article>
+        <img src="" alt="">
+
+        <div
+          class="mx-2 md:mx-5 text-sm md:text-base font-winky-f
+          flex flex-col md:flex-row justify-center items-start gap-5 md:gap-10"
+          >
+          @for (colum of aboutMe(); track $index; let i = $index) {
+            <div
+              class="md:w-2/5 flex flex-col justify-center items-center gap-5"
+              [class.text-right]="i % 2 !== 0"
+              >
+              @for (p of colum; track $index) {
+                <p [innerHTML]="p | highlight"></p>
+              }
+            </div>
+          }
+
+        </div>
 
       </article>
 

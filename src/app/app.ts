@@ -12,6 +12,7 @@ import { CardExperienceCompanyC } from './sections/experience/components/card-ex
 import { CardExperince } from './sections/experience/components/card-experience-company-c/card-experience-company-interface';
 import { StackCardC } from "./sections/stack/components/stack-card-c/stack-card-c";
 import { StackCard } from './sections/stack/components/stack-card-c/stack-card-interface';
+import { HighlightPipe } from './shared/pipes/highlight-pipe';
 
 
 @Component({
@@ -24,7 +25,9 @@ import { StackCard } from './sections/stack/components/stack-card-c/stack-card-i
     AnimatedArrowDownC,
     CardExperienceCompanyC,
     TitleArrowsWrapperC,
-    StackCardC],
+    StackCardC,
+    HighlightPipe
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -83,6 +86,7 @@ export class App {
         'angular',
         'tailwind',
         'primeng',
+        'ionic',
         'php',
         'laravel',
         'mysql',
@@ -168,6 +172,44 @@ export class App {
       ]
     }
   ])
+
+
+  aboutMeData = signal<string[][]>([
+    [
+      `-{Desarrollador Web Full Stack}- con una sólida
+      base académica de dos años en Desarrollo de
+      Aplicaciones Web y -{tres meses de experiencia}-
+      práctica en entorno empresarial. Mi especialización
+       principal se centra en el ecosistema -{Angular}-
+       (Frontend) y -{Express.js}- (Backend), lo que me
+       permite construir soluciones de manera integral-{.}-`,
+
+      `Mi principal fortaleza reside en la -{estabilidad}-
+      y -{constancia}-. Poseo una visión estratégica que me
+      permite enfocarme en la solución y entender cómo
+      encajan todas las piezas del puzle tecnológico
+      para maximizar la -{eficiencia}- y el rendimiento
+      del código-{.}-`
+    ],
+    [
+      `Cuento con dominio de bases de datos -{MySQL}-, y
+      experiencia con frameworks como -{Tailwind CSS}-,
+      -{Ionic}- y librerías de componentes como -{PrimeNG}-.
+      Pongo un gran énfasis en el detalle, buscando
+      siempre el -{"pixel perfect"}- para asegurar que
+      cada interfaz mantenga su armonía visual y
+      funcional-{.}-`,
+
+      `-{Mi objetivo}- es unirme a un equipo donde pueda
+      aplicar todo el conocimiento adquirido. -{Me entusiasma}-
+      contribuir a la creación de soluciones -{robustas}-
+      y -{eficientes}-, aprovechando mi versatilidad
+      Full Stack. Busco un entorno -{colaborativo}- y
+      -{desafiante}- que me impulse a evolucionar y
+      adoptar nuevas prácticas de la industria-{.}-`
+    ]
+  ])
+
 
 
 

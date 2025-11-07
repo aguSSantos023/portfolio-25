@@ -1,12 +1,13 @@
 
 <div
-  class="bg-second-c p-3 rounded-md h-full
+  class="group bg-second-c p-3 rounded-md h-full
   flex flex-col justify-start items-center gap-5
   hover:scale-105 duration-300 ease-in"
   >
 
   <h4
-    class="text-text-c font-winky-f font-bold"
+    class="text-text-c font-winky-f font-bold
+    group-hover:scale-125 group-hover:tracking-widest duration-300 ease-in-out"
     >
     {{ dataCard().title| titlecase }}
   </h4>
@@ -18,8 +19,7 @@
         [iconName]="icon"
         [size]="28"
         [isViewName]="true"
-        class="flex flex-col justify-center items-center gap-2
-        w-14 h-14 text-center text-xs font-winky-f"
+
       />
     }
   </div>
