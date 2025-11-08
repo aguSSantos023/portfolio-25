@@ -1,0 +1,22 @@
+.arrow-wrapper-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el grupo */
+}
+
+.arrow-icon {
+  /* Tamaño base del SVG */
+  width: 50px;
+  height: 50px;
+  /* El color se inyecta desde el HTML con [style.fill]="arrowColor" */
+  flex-shrink: 0; /* Asegura que la flecha no se encoja */
+}
+
+.wrapped-content {
+  /* Estilos opcionales para el contenedor del medio */
+  margin: 0 10px; /* Espacio entre las flechas y el contenido */
+  display: inline-block;
+  /* Asegura que el contenido esté centrado si es un texto, por ejemplo */
+  text-align: center;
+}
+

@@ -1,8 +1,7 @@
 <div
   class="flex flex-col justify-center items-center gap-2
   text-center text-xs font-winky-f"
-  [class.w-14]="isViewName()"
-  [class.h-14]="isViewName()"
+  [class]="getDynamicClasses()"
 
   >
 
@@ -650,7 +649,9 @@
 
   @if (isViewName()) {
     <span
-      class="group-hover:text-shadow-primary-c text-shadow-md transition-colors duration-150 ease-in-out"
+      class="group-hover:text-shadow-primary-c text-shadow-md
+      transition-colors duration-150 ease-in-out
+      md:text-lg"
       >
       {{ iconFullName() }}
     </span>

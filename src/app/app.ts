@@ -15,6 +15,7 @@ import { StackCard } from './sections/stack/components/stack-card-c/stack-card-i
 import { HighlightPipe } from './shared/pipes/highlight-pipe';
 import { CardStudy } from './sections/about-me/card-study-c/card-study-interface';
 import { CardStudyC } from './sections/about-me/card-study-c/card-study-c';
+import { TitleFooterArrowWrapperC } from "./sections/footer/title-footer-arrow-wrapper-c/title-footer-arrow-wrapper-c";
 
 
 @Component({
@@ -29,8 +30,9 @@ import { CardStudyC } from './sections/about-me/card-study-c/card-study-c';
     TitleArrowsWrapperC,
     StackCardC,
     HighlightPipe,
-    CardStudyC
-  ],
+    CardStudyC,
+    TitleFooterArrowWrapperC
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

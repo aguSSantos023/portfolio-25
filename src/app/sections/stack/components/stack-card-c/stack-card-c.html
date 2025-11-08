@@ -2,11 +2,11 @@
 <div
   class="group bg-second-c p-3 rounded-md h-full
   flex flex-col justify-start items-center gap-5
-  hover:scale-105 duration-300 ease-in"
+  hover:scale-110 duration-300 ease-in"
   >
 
   <h4
-    class="text-text-c font-winky-f font-bold
+    class="text-text-c font-winky-f font-bold md:text-2xl
     group-hover:scale-125 group-hover:tracking-widest duration-300 ease-in-out"
     >
     {{ dataCard().title| titlecase }}
@@ -17,7 +17,7 @@
 
       <app-svg-icon-c
         [iconName]="icon"
-        [size]="28"
+        [size]="screenSizeS.isMobile() ? 28 : 34"
         [isViewName]="true"
 
       />

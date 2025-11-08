@@ -1,7 +1,7 @@
-<div class="min-h-screen mx-[5%] md:mx-[25%] bg-background-c flex flex-col items-center">
-  <app-navbar-c class="mt-2.5"/>
+<div class="min-h-screen  md:mx-[25%] bg-background-c flex flex-col items-center">
+  <app-navbar-c class="mt-2.5 "/>
 
-  <main class="mt-24 w-full">
+  <main class="mt-24 mx-[5%]">
     <section class="flex flex-col justify-center items-center gap-8 md:gap-16 md:mt-8">
       <app-download-cv-c />
 
@@ -52,7 +52,6 @@
     </section>
 
 
-
     <section
       class="mt-48 pt-20 text-text-c"
       id="experience"
@@ -95,12 +94,12 @@
         </app-title-arrows-wrapper-c>
       </h3>
 
-      <article class="w-full grid grid-cols-2 gap-4 md:gap-10">
+      <article class="w-full grid grid-cols-2 gap-4 md:gap-16">
 
         @for (card of stackData(); track card.title) {
           <app-stack-card-c
             [dataCard]="card"
-            class="md:mx-5"
+
           />
         }
 
@@ -144,14 +143,13 @@
 
       </article>
 
-      <article class="h-screen w-full">
+      <article class=" w-full">
         <h4 class="text-2xl text-center font-winky-f tracking-widest mb-5">Estudios</h4>
 
         <div class="flex flex-col gap-3">
           @for (study of studiesData(); track study.title) {
             <app-card-study-c
               [studyData]="study"
-              class=""
             />
           }
         </div>
@@ -162,6 +160,25 @@
 
     </section>
 
+
   </main>
+
+  <footer
+    class="w-full h-40 md:h-60 mt-20 bg-second-c md:rounded-t-md
+    flex flex-col justify-center items-center gap-6 md:gap-10"
+  >
+    <div class="flex justify-center items-center gap-5">
+      <app-external-link-c type="linkedin" />
+      <app-external-link-c type="github" />
+    </div>
+
+    <app-title-footer-arrow-wrapper-c
+      class="text-text-c font-winky-f text-xl md:text-4xl tracking-widest font-extrabold"
+      >
+      AGUSTÍN SANTOS
+    </app-title-footer-arrow-wrapper-c>
+
+  </footer>
+
 
 </div>
