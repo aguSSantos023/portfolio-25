@@ -210,7 +210,7 @@ export class App {
       contribuir a la creación de soluciones -{robustas}-
       y -{eficientes}-, aprovechando mi versatilidad
       Full Stack. Busco un entorno -{colaborativo}- y
-      -{desafiante}- que me impulse a evolucionar
+      -{desafiante}- que me impulse a evolucionar y
       adoptar nuevas prácticas de la industria-{.}-`
     ]
   ])

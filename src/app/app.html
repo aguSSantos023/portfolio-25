@@ -7,8 +7,8 @@
 
       <header class="text-center text-text-c">
         <div class="font-modak-f">
-          <h2 class="text-3xl md:text-5xl text-primary-c leading-none">Software Developer</h2>
-          <h1 class="text-[2.6rem] md:text-7xl -mt-4">Agustín Santos</h1>
+          <h1 class="text-3xl md:text-5xl text-primary-c leading-none">Software Developer</h1>
+          <h2 class="text-[2.6rem] md:text-7xl -mt-4">Agustín Santos</h2>
         </div>
 
         <h3 class="text-xl md:text-3xl md:mt-3 font-winky-f font-bold">Full Stack Angular & Express.js</h3>
@@ -85,7 +85,7 @@
 
     <section
       id="stack"
-      class="pt-20 text-white flex flex-col justify-center items-center gap-10"
+      class="pt-24 text-white flex flex-col justify-center items-center gap-10"
       >
 
       <h3>
@@ -94,7 +94,7 @@
         </app-title-arrows-wrapper-c>
       </h3>
 
-      <article class="w-full grid grid-cols-2 gap-4 md:gap-16">
+      <article class="w-full grid grid-cols-2 gap-4 md:gap-6">
 
         @for (card of stackData(); track card.title) {
           <app-stack-card-c
@@ -109,7 +109,7 @@
 
     <section
       id="aboutMy"
-      class="pt-20 text-white flex flex-col justify-center items-center gap-10"
+      class="pt-24 text-white flex flex-col justify-center items-center gap-10"
       >
 
       <h3>
@@ -120,8 +120,12 @@
         </app-title-arrows-wrapper-c>
       </h3>
 
-      <article>
-        <img src="" alt="">
+      <article class="mt-5 md:mt-0 flex flex-col justify-center items-center gap-8 md:gap-3">
+        <img
+          src="avatar.webp"
+          alt="avatar profile Agustín Santos"
+          class="w-36 ml-2 md:w-40 animate-float-suave "
+        >
 
         <div
           class="mx-2 md:mx-5 text-sm md:text-base font-winky-f
@@ -143,8 +147,12 @@
 
       </article>
 
-      <article class=" w-full">
-        <h4 class="text-2xl text-center font-winky-f tracking-widest mb-5">Estudios</h4>
+      <article class="w-full">
+        <h4
+          class="mt-5 text-2xl text-center font-winky-f tracking-widest mb-5"
+          >
+          ESTUDIOS
+        </h4>
 
         <div class="flex flex-col gap-3">
           @for (study of studiesData(); track study.title) {

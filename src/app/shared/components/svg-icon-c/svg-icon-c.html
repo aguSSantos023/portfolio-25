@@ -1,8 +1,7 @@
 <div
-  class="flex flex-col justify-center items-center gap-2
+  class="flex flex-col justify-center items-center gap-1
   text-center text-xs font-winky-f"
   [class]="getDynamicClasses()"
-
   >
 
   @switch (iconName()) {
@@ -138,8 +137,8 @@
     @case ('mysql') {
       <svg
         role="img"
-        [attr.width]="size()"
-        [attr.height]="size()"
+        [attr.width]="size() * 1.4"
+        [attr.height]="size() * 1.4"
         fill="#4479A1"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -651,7 +650,7 @@
     <span
       class="group-hover:text-shadow-primary-c text-shadow-md
       transition-colors duration-150 ease-in-out
-      md:text-lg"
+      md:text-sm"
       >
       {{ iconFullName() }}
     </span>

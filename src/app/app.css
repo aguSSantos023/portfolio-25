@@ -1,0 +1,26 @@
+img {
+  mask-image: linear-gradient(
+    black 70%,
+    transparent
+  );
+  filter: drop-shadow(
+    0 0 6px rgba(255, 109, 45, 0.8)
+  );
+}
+
+
+
+
+@keyframes float-personalizado {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-suave {
+
+  animation: float-personalizado 4s ease-in-out infinite;
+}

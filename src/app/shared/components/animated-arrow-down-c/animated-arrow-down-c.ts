@@ -37,7 +37,7 @@ export class AnimatedArrowDownC {
 
 
   get styles() {
-    const shaftOriginalLength = 30;
+    const shaftOriginalLength = 31;
     const stretchFactor = 1 + (this.distance() / shaftOriginalLength);
 
     return {
