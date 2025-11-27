@@ -76,7 +76,7 @@ export class App {
   experienceCompanyData = signal<CardExperince[]>([
     {
       title: 'Desarrollador Full Stack + Nytelweb',
-      dates: 'Mar 2025 - Jul 2025',
+      dates: 'Mar 2025 - Jun 2025',
       data: [
         'Habilidades validadas en el stack (-{Laravel 12}-, -{Angular 19}-, -{MySQL}-) mediante proyectos iniciales para superar la evaluación técnica -{.}-',
         'Implementación de nuevas funcionalidades en productos existentes, trabajando en -{backend}- (PHP/Laravel) y -{frontend}- (Angular) -{.}-',
@@ -111,7 +111,6 @@ export class App {
         'Realización de -{mantenimientos preventivos}- en equipos para minimizar averías y asegurar un rendimiento óptimo a largo plazo -{.}-'
       ],
       stack: [
-
         'cpu',
         'gears',
         'memory',
