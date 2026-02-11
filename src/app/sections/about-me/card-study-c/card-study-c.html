@@ -1,0 +1,31 @@
+<div
+  class="group relative bg-second-c rounded-md m-2 p-3 font-winky-f "
+  >
+
+  <span
+    class="absolute -top-4 right-8 translate-x-1/2
+    text-sm md:text-lg rotate-12 font-bold rounded-md px-2 py-1
+
+    bg-gray-900/85
+    group-hover:bg-orange-500
+
+    shadow-lg transition-colors duration-300"
+    >
+    {{ studyData().date }}
+  </span>
+
+  <header class="mb-5">
+    <h5 class="md:text-2xl">{{ studyData().title }}</h5>
+    <h6 class=" text-xs md:text-lg font-extralight">{{ studyData().level }}</h6>
+  </header>
+
+  <div>
+    @for (text of studyData().text; track $index) {
+      <p
+        [innerHTML]="text | highlight"
+        class="text-xs md:text-base mb-3"
+        >
+      </p>
+    }
+  </div>
+</div>

@@ -1,3 +1,192 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<div class="min-h-screen  md:mx-[25%] bg-background-c flex flex-col items-center">
+  <app-navbar-c class="mt-2.5 "/>
+
+  <main class="mt-24 mx-[5%]">
+    <section class="flex flex-col justify-center items-center gap-8 md:gap-16 md:mt-8">
+      <app-download-cv-c />
+
+      <header class="text-center text-text-c">
+        <div class="font-modak-f">
+          <h1 class="text-3xl md:text-5xl text-primary-c leading-none">Software Developer</h1>
+          <h2 class="text-[2.6rem] md:text-7xl -mt-4">Agustín Santos</h2>
+        </div>
+
+        <h3 class="text-xl md:text-3xl md:mt-3 font-winky-f font-bold">Full Stack Angular & Express.js</h3>
+      </header>
+
+      <div class="flex justify-center items-center gap-5">
+        <app-external-link-c type="linkedin" />
+        <app-external-link-c type="github" />
+      </div>
+
+      <div class="flex justify-center items-center gap-2">
+
+        @for (svg of preferredStack(); track svg.name) {
+
+          <a
+            [href]="svg.link"
+            target="_blank"
+            class="transition duration-200 hover:-translate-y-1"
+            >
+            <app-svg-icon-c
+              [iconName]="svg.name"
+              [size]="28 * iconSizeMultiplier()"
+            />
+
+          </a>
+
+
+        }
+
+      </div>
+
+      <div class="relative" >
+
+        <app-animated-arrow-down-c
+          class="absolute left-1/2 -translate-x-1/2 z-0"
+          [distance]="280"
+          [duration]="3"
+        />
+      </div>
+
+    </section>
+
+
+    <section
+      class="mt-48 pt-20 text-text-c"
+      id="experience"
+      >
+      <h3
+        class="text-xl text-center font-modak-f
+        mb-5 tracking-[0.2rem]"
+        >
+        EXPERIENCIA
+      </h3>
+
+      <article>
+        <h4 class="text-2xl text-center font-winky-f tracking-widest mb-2">EMPRESAS</h4>
+        <div class="flex flex-col justify-center items-center gap-4">
+          @for (card of experienceCompanyData(); track card.title) {
+            <app-card-experience-company-c
+              [companyData]="card"
+              class="w-full"
+            />
+          }
+        </div>
+
+      </article>
+<!--
+      <article>
+        <h4 class="text-xl text-center font-winky-f tracking-widest">PROYECTOS DESTACADOS</h4>
+      </article> -->
+
+    </section>
+
+
+    <section
+      id="stack"
+      class="pt-24 text-white flex flex-col justify-center items-center gap-10"
+      >
+
+      <h3>
+        <app-title-arrows-wrapper-c>
+          TECNOLOGÍAS
+        </app-title-arrows-wrapper-c>
+      </h3>
+
+      <article class="w-full grid grid-cols-2 gap-4 md:gap-6">
+
+        @for (card of stackData(); track card.title) {
+          <app-stack-card-c
+            [dataCard]="card"
+
+          />
+        }
+
+      </article>
+
+    </section>
+
+    <section
+      id="aboutMy"
+      class="pt-24 text-white flex flex-col justify-center items-center gap-10"
+      >
+
+      <h3>
+        <app-title-arrows-wrapper-c
+          [arrowCount]="3"
+          >
+          SOBRE MI
+        </app-title-arrows-wrapper-c>
+      </h3>
+
+      <article class="mt-5 md:mt-0 flex flex-col justify-center items-center gap-8 md:gap-3">
+        <img
+          src="avatar.webp"
+          alt="avatar profile Agustín Santos"
+          class="w-36 ml-2 md:w-40 animate-float-suave "
+        >
+
+        <div
+          class="mx-2 md:mx-5 text-sm md:text-base font-winky-f
+          flex flex-col md:flex-row justify-center items-start gap-5 md:gap-10"
+          >
+
+          @for (colum of aboutMeData(); track $index; let i = $index) {
+            <div
+              class="md:w-2/5 flex flex-col justify-center items-center gap-5"
+              [class.text-right]="i % 2 !== 0"
+              >
+              @for (p of colum; track $index) {
+                <p [innerHTML]="p | highlight"></p>
+              }
+            </div>
+          }
+
+        </div>
+
+      </article>
+
+      <article class="w-full">
+        <h4
+          class="mt-5 text-2xl text-center font-winky-f tracking-widest mb-5"
+          >
+          ESTUDIOS
+        </h4>
+
+        <div class="flex flex-col gap-3">
+          @for (study of studiesData(); track study.title) {
+            <app-card-study-c
+              [studyData]="study"
+            />
+          }
+        </div>
+
+      </article>
+
+
+
+    </section>
+
+
+  </main>
+
+  <footer
+    class="w-full h-40 md:h-60 mt-20 bg-second-c md:rounded-t-md
+    flex flex-col justify-center items-center gap-6 md:gap-10"
+  >
+    <div class="flex justify-center items-center gap-5">
+      <app-external-link-c type="linkedin" />
+      <app-external-link-c type="github" />
+    </div>
+
+    <app-title-footer-arrow-wrapper-c
+      class="text-text-c font-winky-f text-xl md:text-4xl tracking-widest font-extrabold"
+      >
+      AGUSTÍN SANTOS
+    </app-title-footer-arrow-wrapper-c>
+
+  </footer>
+
+
+</div>

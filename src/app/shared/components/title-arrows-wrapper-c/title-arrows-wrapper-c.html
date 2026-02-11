@@ -1,0 +1,42 @@
+<div class="title-arrow-container w-min">
+
+  <div
+    class="content-wrapper w-max text-xl text-center
+    font-modak-f tracking-[0.2rem] text-text-c"
+    >
+    <ng-content></ng-content>
+  </div>
+
+  @for (arrow of arrowIndexes; track $index; let i = $index) {
+  <svg
+    [style]="getArrowStyles(i)"
+    class='arrow-icon'
+    viewBox="0 40 100 200"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="8"
+    stroke-linecap="round"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <g class="shaft-fixed">
+      <line x1="50" y1="20" x2="50" y2="120" />
+    </g>
+
+    <g class="shaft-animated">
+      <line x1="50" y1="120" x2="50" y2="145" />
+    </g>
+
+    <g class="tip-animated">
+      <polygon
+        points="38.75,145 61.25,145 50,160"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="8"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+
+  }
+
+</div>

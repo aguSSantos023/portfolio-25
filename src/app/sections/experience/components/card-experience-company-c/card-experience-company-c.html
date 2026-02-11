@@ -1,0 +1,32 @@
+<div class="p-3 bg-second-c rounded-md font-winky-f">
+  <header class="mb-3">
+    <h5 class="text-lg font-bold">
+      {{ companyData().title }}
+    </h5>
+
+    <h6 class="text-xs ml-2 text-primary-c">
+      {{ companyData().dates }}
+    </h6>
+  </header>
+
+  <div class="flex justify-between gap-5">
+    <ul class="list-disc text-xs ml-6 ">
+      @for (item of companyData().data; track $index) {
+        <li
+          [innerHTML]="item | highlight"
+          class="mb-3 text-sm md:text-base"
+          >
+        </li>
+      }
+    </ul>
+
+    <div
+      class="w-42 h-1/3 flex flex-wrap gap-3 justify-center items-center"
+      >
+      @for (icon of companyData().stack; track icon) {
+        <app-svg-icon-c [iconName]="icon" [size]="28" />
+      }
+    </div>
+  </div>
+
+</div>
